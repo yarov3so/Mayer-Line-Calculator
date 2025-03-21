@@ -23,12 +23,17 @@ current_entry={0}
 st.title("Mayer Line Calculator")
 st.markdown("Calculate the equation of the Mayer line of best fit in slope-intercept form.")
 
+entries={}
+i=0
 while True:
-    current_entry=st.text_input("Please enter a pair of coordinates separated by a comma or leave the box blank if you are done. ")
-    if len(current_entry)==0:
+    
+    entries[i]=st.text_input("Please enter a pair of coordinates separated by a comma or leave the box blank if you are done. ")
+    if len(entries[i])==0:
         st.stop()
         break
-    datapts.loc[len(datapts)]=comprehend(current_entry)
+
+    datapts.loc[len(datapts)]=comprehend(entries[i])
+    i+=1
 
 if len(datapts)==0:
     st.markdown("You have entered no data points!")
