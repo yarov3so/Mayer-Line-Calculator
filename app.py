@@ -27,7 +27,7 @@ entries={}
 i=0
 while True:
     
-    entries[i]=st.text_input("Please enter a pair of coordinates separated by a comma or leave the box blank if you are done. ")
+    entries[i]=st.text_input("Please enter a pair of coordinates separated by a comma or leave the box blank if you are done. ",key=i)
     if len(entries[i])==0:
         st.stop()
         break
