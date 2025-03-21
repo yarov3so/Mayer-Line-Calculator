@@ -33,7 +33,7 @@ datapts=pd.DataFrame(columns=['x', 'y'])
 current_entry={0}
 
 st.title("Mayer Line Calculator")
-st.markdown("Calculate the equation of the Mayer line of best fit in slope-intercept form.")
+st.markdown("Calculates the equation of the Mayer line of best fit in slope-intercept form.")
 
 entries={}
 i=0
