@@ -36,7 +36,7 @@ while True:
     datapts.loc[len(datapts)]=comprehend(entries[i])
     i+=1
 
-if len(datapts)==1:
+if len(datapts)==0 or (i==0 and "," not in entries[0]) or (i==0 and entries[0] == ",") :
     st.markdown("You have entered no data points!")
     st.stop()
 
