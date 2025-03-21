@@ -39,7 +39,7 @@ entries={}
 i=0
 while True:
     
-    entries[i]=st.text_input("Enter a pair of coordinates separated by a comma, or write 'done' if you are done. Remember to hit Enter: ",key=i)
+    entries[i]=st.text_input("Enter a pair of coordinates separated by a comma, or write 'done' if you are done: ",key=i)
     if len(entries[i])==0:
         st.stop()
         break
