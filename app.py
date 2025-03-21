@@ -48,7 +48,7 @@ datapts=datapts.sort_values(by="x")
 n=len(datapts)
 
 st.markdown("You have entered the following coordinates:")
-st.markdown(f"{datapts.to_string(index=False)}")
+st.dataframe(datapts,hide_index=True)
 
 if len(datapts)%2 == 0:
     
@@ -73,11 +73,11 @@ if len(datapts)%2 == 1:
         G1=datapts.iloc[:1+n//2]
         G2=datapts.iloc[1+n//2:]
     
-        st.markdown(f"""Group 1:  
-        {G1.to_string(index=False)}""")
+        st.markdown(f"Group 1:")
+        st.dataframe(G1,hide_index=True)
 
-        st.markdown(f"""Group 2:  
-        {G2.to_string(index=False)}""")
+        st.markdown(f"Group 2:")
+        st.dataframe(G2,hide_index=True)
 
     else:
 
@@ -86,11 +86,11 @@ if len(datapts)%2 == 1:
         G1=datapts.iloc[:n//2]
         G2=datapts.iloc[n//2:]
     
-        st.markdown(f"""Group 1:  
-        {G1.to_string(index=False)}""")
+        st.markdown(f"Group 1:")
+        st.dataframe(G1,hide_index=True)
     
-        st.markdown(f"""Group 2:  
-        {G2.to_string(index=False)}""")
+        st.markdown(f"Group 2:")
+        st.dataframe(G2,hide_index=True)
 
 M1=(G1['x'].mean(),G1['y'].mean())
 M2=(G2['x'].mean(),G2['y'].mean())
