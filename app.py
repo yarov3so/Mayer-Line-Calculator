@@ -26,6 +26,8 @@ def try_int(num):
         None
     if num==num_int:
         return num_int
+    elif (num<=0.1 and num>=0) or (num>=-0.1 and num<=0):
+        return "{:.2g}".format(float(num))
     else:
         return round(float(num),2)
     
