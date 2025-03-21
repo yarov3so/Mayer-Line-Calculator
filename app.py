@@ -67,9 +67,9 @@ if len(datapts)==2:
     G1=datapts.iloc[:n//2]
     G2=datapts.iloc[n//2:]
     
-    st.markdown("\nYou have entered only two points.")
+    st.markdown("\nYou have entered only two points, so each of the two groups has only one point.")
 
-if len(datapts)%2 == 0:
+elif len(datapts)%2 == 0:
     
     G1=datapts.iloc[:n//2]
     G2=datapts.iloc[n//2:]
@@ -143,7 +143,7 @@ m=(M2[1]-M1[1])/(M2[0]-M1[0])
 b=M1[1]-m*M1[0]
 
 st.markdown("We use M1 and M2 to find the slope of the line of best fit by calculating (M2_y - M1_y)/(M2_x - M1_x):")
-st.markdown(f"Slope = (M2_y - M1_y)/(M2_x - M1_x) = ({M2[1]} - {M1[1]})/({M2[0]} - {M1[0]}) = {try_int(m)}")
+st.markdown(f"Slope = $(M2_y - M1_y)/(M2_x - M1_x) = ({try_int(M2[1])} - {try_int(M1[1])})/({try_int(M2[0])} - {try_int(M1[0])}) = {try_int(m)}$")
 
 st.markdown(f"We calculate the y-intercept b by focing the line with slope {m} to pass through either M1 or M2. We will get the same y-intercept no matter which point we choose!")
 
