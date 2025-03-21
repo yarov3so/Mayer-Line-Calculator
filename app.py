@@ -27,15 +27,16 @@ entries={}
 i=0
 while True:
     
-    entries[i]=st.text_input("Please enter a pair of coordinates separated by a comma or leave the box blank if you are done. ",key=i)
-    if len(entries[i])==0 and i==0:
+    entries[i]=st.text_input("Please enter a pair of coordinates separated by a comma, or write 'done' of you are done. Remember to hit Enter: ",key=i)
+    if len(entries[i])==0:
         st.stop()
         break
-
+    if "," not in entries[i]:
+        break
     datapts.loc[len(datapts)]=comprehend(entries[i])
     i+=1
 
-if len(datapts)==0:
+if len(datapts)==1:
     st.markdown("You have entered no data points!")
     st.stop()
 
