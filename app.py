@@ -138,8 +138,8 @@ for el in G2["y"]:
     sumstring_y2+=(str(try_int(el)))+" + "
 sumstring_y2=sumstring_y2[:-3]
 
-st.markdown(f"""M1 = ( ({sumstring_x1})/{len(G1)} , ({sumstring_y1})/{len(G1)} ) = {(try_int(M1[0])),try_int(M1[1])}  
-M2 = ( ({sumstring_x2})/{len(G2)} , ({sumstring_y2})/{len(G2)} ) = {(try_int(M2[0]),try_int(M2[1]))}""")
+st.markdown(f"""$M1 = ( ({sumstring_x1})/{len(G1)} , ({sumstring_y1})/{len(G1)} ) = {(try_int(M1[0])),try_int(M1[1])}  
+M2 = ( ({sumstring_x2})/{len(G2)} , ({sumstring_y2})/{len(G2)} ) = {(try_int(M2[0]),try_int(M2[1]))}$""")
 
 m=(M2[1]-M1[1])/(M2[0]-M1[0])
 m=try_int(m)
