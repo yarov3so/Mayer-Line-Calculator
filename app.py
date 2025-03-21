@@ -45,7 +45,11 @@ while True:
         break
     if "," not in entries[i]:
         break
-    datapts.loc[len(datapts)]=comprehend(entries[i])
+    try:
+        datapts.loc[len(datapts)]=comprehend(entries[i])
+    except:
+        st.markdown("Cannot parse your entry! Did you make a typo?")
+        st.stop()
     i+=1
 
 if len(datapts)==0 or (i==0 and "," not in entries[0]) or (i==0 and entries[0] == ",") :
