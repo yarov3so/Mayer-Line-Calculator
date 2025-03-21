@@ -86,8 +86,9 @@ if len(datapts)%2 == 1:
     st.markdown("\nYou have entered an odd number of points.")
     
     if meandist1<=meandist2:
-    
-        st.markdown(f"\nThe middle point {tuple(datapts.loc[n//2])} is closer to the first {n//2} points. Therefore, it is a part of the first group, so we have:")
+
+        midpoint=tuple(datapts.loc[n//2])
+        st.markdown(f"\nThe middle point {(try_int(midpoint[0]),try_int(midpoint[1]))} is closer to the first {n//2} points. Therefore, it is a part of the first group, so we have:")
         
         G1=datapts.iloc[:1+n//2]
         G2=datapts.iloc[1+n//2:]
@@ -99,8 +100,9 @@ if len(datapts)%2 == 1:
         st.dataframe(G2,hide_index=True)
 
     else:
-
-        st.markdown(f"\nThe middle point {tuple(datapts.loc[n//2])} is closer to the last {n//2} points. Therefore, it is a part of the second group, so we have:")
+        
+        midpoint=tuple(datapts.loc[n//2])
+        st.markdown(f"\nThe middle point {(try_int(midpoint[0]),try_int(midpoint[1]))} is closer to the last {n//2} points. Therefore, it is a part of the second group, so we have:")
         
         G1=datapts.iloc[:n//2]
         G2=datapts.iloc[n//2:]
@@ -111,39 +113,41 @@ if len(datapts)%2 == 1:
         st.markdown(f"Group 2:")
         st.dataframe(G2,hide_index=True)
 
-M1=(try_int(G1['x'].mean()),try_int(G1['y'].mean()))
-M2=(try_int(G2['x'].mean()),try_int(G2['y'].mean()))
+M1=(G1['x'].mean(),G1['y'].mean())
+M2=(G2['x'].mean(),G2['y'].mean())
 
 st.markdown("As such, we have:")
 
 sumstring_x1=""
 for el in G1["x"]:
-    sumstring_x1+=(str(el))+" + "
+    sumstring_x1+=(str(try_int(el)))+" + "
 sumstring_x1=sumstring_x1[:-3]
 
 sumstring_y1=""
 for el in G1["y"]:
-    sumstring_y1+=(str(el))+" + "
+    sumstring_y1+=(str(try_int(el)))+" + "
 sumstring_y1=sumstring_y1[:-3]
 
 sumstring_x2=""
 for el in G2["x"]:
-    sumstring_x2+=(str(el))+" + "
+    sumstring_x2+=(str(try_int(el)))+" + "
 sumstring_x2=sumstring_x2[:-3]
 
 sumstring_y2=""
 for el in G2["y"]:
-    sumstring_y2+=(str(el))+" + "
+    sumstring_y2+=(str(try_int(el)))+" + "
 sumstring_y2=sumstring_y2[:-3]
 
-st.markdown(f"""M1 = ( ({sumstring_x1})/{len(G1)} , ({sumstring_y1})/{len(G1)} ) = {M1}  
-M2 = ( ({sumstring_x2})/{len(G2)} , ({sumstring_y2})/{len(G2)} ) = {M2}""")
+st.markdown(f"""M1 = ( ({sumstring_x1})/{len(G1)} , ({sumstring_y1})/{len(G1)} ) = {(try_int(M1[0])),try_int(M1[1])}  
+M2 = ( ({sumstring_x2})/{len(G2)} , ({sumstring_y2})/{len(G2)} ) = {(try_int(M2[0]),try_int(M2[1]))}""")
 
 m=(M2[1]-M1[1])/(M2[0]-M1[0])
+m=try_int(m)
 b=M1[1]-m*M1[0]
+b=try_int(b)
 
 st.markdown("We use M1 and M2 to find the slope of the line of best fit by calculating (M2_y - M1_y)/(M2_x - M1_x):")
-st.markdown(f"Slope = $(M2_y - M1_y)/(M2_x - M1_x) = ({try_int(M2[1])} - {try_int(M1[1])})/({try_int(M2[0])} - {try_int(M1[0])}) = {try_int(m)}$")
+st.markdown(f"Slope = $(\{M_2\}_y - M1_y)/(M2_x - M1_x) = ({try_int(M2[1])} - {try_int(M1[1])})/({try_int(M2[0])} - {try_int(M1[0])}) = {try_int(m)}$")
 
 st.markdown(f"We calculate the y-intercept b by focing the line with slope {m} to pass through either M1 or M2. We will get the same y-intercept no matter which point we choose!")
 
