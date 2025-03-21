@@ -147,7 +147,7 @@ b=M1[1]-m*M1[0]
 b=try_int(b)
 
 st.markdown("We use M1 and M2 to find the slope of the line of best fit as follows:")
-st.markdown(f"Slope = $( M2_y - M1_y )/(M2_x - M1_x) = ({try_int(M2[1])} - {try_int(M1[1])})/({try_int(M2[0])} - {try_int(M1[0])}) = {try_int(m)}$")
+st.markdown(f"Slope = $( \frac{{M2_y - M1_y}}{{M2_x - M1_x}} = ({try_int(M2[1])} - {try_int(M1[1])})/({try_int(M2[0])} - {try_int(M1[0])}) = {try_int(m)}$")
 
 st.markdown(f"We calculate the y-intercept b by focing the line with slope {m} to pass through either M1 or M2. We will get the same y-intercept no matter which point we choose!")
 
