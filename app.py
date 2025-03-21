@@ -48,7 +48,7 @@ datapts=datapts.sort_values(by="x")
 n=len(datapts)
 
 st.markdown("You have entered the following coordinates:")
-st.markdown(f"{datapts.round(2).to_string(index=False)}")
+st.markdown(f"{datapts.to_string(index=False)}")
 
 if len(datapts)%2 == 0:
     
