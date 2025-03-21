@@ -149,7 +149,7 @@ m=(M2[1]-M1[1])/(M2[0]-M1[0])
 b=M1[1]-m*M1[0]
 
 st.markdown("We use M1 and M2 to find the slope of the line of best fit as follows:")
-st.markdown(f"Slope $= \\frac{{M2_y - M1_y}}{{M2_x - M1_x}} = \\frac{{ {try_int(M2[1])} - {try_int(M1[1])} }} {{ {try_int(M2[0])} - {try_int(M1[0])} }} = {try_int(m)}$")
+st.markdown(f"$\\text{{Slope}} = \\frac{{M2_y - M1_y}}{{M2_x - M1_x}} = \\frac{{ {try_int(M2[1])} - {try_int(M1[1])} }} {{ {try_int(M2[0])} - {try_int(M1[0])} }} = {try_int(m)}$")
 
 st.markdown(f"We calculate the y-intercept b by focing the line with slope {try_int(m)} to pass through either M1 or M2. We will get the same y-intercept no matter which point we choose!")
 
@@ -162,8 +162,8 @@ $ b = {try_int(M1[1])} - {try_int(m)} \\cdot ({try_int(M1[0])}) = {try_int(b)} $
 st.markdown(f"If we choose M2:")
 st.markdown(f"""$y = mx + b$    
 $y = {try_int(m)}(x) + b $   
-$ {try_int(M2[1])} = {try_int(m)} \\cdot ({try_int(M2[0])}) + b $ &nbsp; <-  plugging the coordinates of M2 into the slope-intercept form of the line of best fit.   
-$ b = {try_int(M2[1])} - {try_int(m)} \\cdot ({try_int(M2[0])}) = {try_int(b)} $""")
+$ {try_int(M2[1])} = {try_int(m)} \cdot ({try_int(M2[0])}) + b $ &nbsp; <-  plugging the coordinates of M2 into the slope-intercept form of the line of best fit.   
+$ b = {try_int(M2[1])} - ({try_int(m)}) \cdot ({try_int(M2[0])}) = {try_int(b)} $""")
 
 st.markdown(f"And so, the Mayer line method produces the following line of best fit in slope-intercept form: ")
 
