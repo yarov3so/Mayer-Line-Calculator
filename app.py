@@ -16,6 +16,18 @@ def comprehend(mystring):
             for i in range(int(re.findall(r'\d+', el)[0])):
                 data.append(None)
     return data
+
+def try_int(num):
+    
+    num_int=None
+    try:
+        num_int=int(num)
+    except:
+        None
+    if num==num_int:
+        return num_int
+    else:
+        return round(float(num),2)
     
 datapts=pd.DataFrame(columns=['x', 'y'])
 current_entry={0}
@@ -99,8 +111,8 @@ if len(datapts)%2 == 1:
         st.markdown(f"Group 2:")
         st.dataframe(G2,hide_index=True)
 
-M1=(round(G1['x'].mean(),2),G1['y'].mean())
-M2=(G2['x'].mean(),G2['y'].mean())
+M1=(try_int(G1['x'].mean()),try_int(G1['y'].mean()))
+M2=(try_int(G2['x'].mean()),try_int(G2['y'].mean()))
 
 st.markdown("As such, we have:")
 
@@ -131,7 +143,7 @@ m=(M2[1]-M1[1])/(M2[0]-M1[0])
 b=M1[1]-m*M1[0]
 
 st.markdown("We use M1 and M2 to find the slope of the line of best fit by calculating (M2_y - M1_y)/(M2_x - M1_x):")
-st.markdown(f"Slope = (M2_y - M1_y)/(M2_x - M1_x) = ({M2[1]} - {M1[1]})/({M2[0]} - {M1[0]}) = {m}")
+st.markdown(f"Slope = (M2_y - M1_y)/(M2_x - M1_x) = ({M2[1]} - {M1[1]})/({M2[0]} - {M1[0]}) = {try_int(m)}")
 
 st.markdown(f"We calculate the y-intercept b by focing the line with slope {m} to pass through either M1 or M2. We will get the same y-intercept no matter which point we choose!")
 
