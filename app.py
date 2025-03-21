@@ -56,8 +56,10 @@ if len(datapts)==0 or (i==0 and "," not in entries[0]) or (i==0 and entries[0] =
     st.markdown("You have entered no data points!")
     st.stop()
 
+datapts=datapts.drop_duplicates()
+
 if len(datapts)==1:
-    st.markdown("You need at least two points (ideally many more) to calculate the Mayer line equation!")
+    st.markdown("You need at least two distinct points (ideally many more) to calculate the Mayer line equation!")
     st.stop()
 
 datapts=datapts.sort_values(by="x")
