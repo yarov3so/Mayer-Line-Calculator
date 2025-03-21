@@ -142,28 +142,27 @@ st.markdown(f"""$M1 = \\left( \\frac{{ {sumstring_x1} }}{{ {len(G1)} }} , \\frac
 $M2 = \\left( \\frac{{ {sumstring_x2} }}{{ {len(G2)} }} , \\frac{{ {sumstring_y2} }}{{ {len(G2)} }} \\right) = {(try_int(M2[0]),try_int(M2[1]))}$""")
 
 m=(M2[1]-M1[1])/(M2[0]-M1[0])
-m=try_int(m)
 b=M1[1]-m*M1[0]
-b=try_int(b)
 
 st.markdown("We use M1 and M2 to find the slope of the line of best fit as follows:")
 st.markdown(f"Slope $= \\frac{{M2_y - M1_y}}{{M2_x - M1_x}} = \\frac{{ {try_int(M2[1])} - {try_int(M1[1])} }} {{ {try_int(M2[0])} - {try_int(M1[0])} }} = {try_int(m)}$")
 
-st.markdown(f"We calculate the y-intercept b by focing the line with slope {m} to pass through either M1 or M2. We will get the same y-intercept no matter which point we choose!")
+st.markdown(f"We calculate the y-intercept b by focing the line with slope {try_int(m)} to pass through either M1 or M2. We will get the same y-intercept no matter which point we choose!")
 
 st.markdown(f"If we choose M1:")
 st.markdown(f"""y = mx + b  
-y = {m}x + b  
-{M1[1]} = {m}*{M1[0]} + b  <-  plugging the coordinates of M1 into the slope-intercept form of the line of best fit.  
-b = {M1[1]} - {m}*{M1[0]} = {b}""")
+y = {try_int(m)}x + b  
+{try_int(M1[1])} = {try_int(m)}*{try_int(M1[0])} + b  <-  plugging the coordinates of M1 into the slope-intercept form of the line of best fit.  
+b = {try_int(M1[1])} - {try_int(m)}*{try_int(M1[0])} = {try_int(b)}""")
 
 st.markdown(f"If we choose M2:")
-st.markdown(f"""y = mx + b  
-y = {m}x + b  
-{M2[1]} = {m}*{M2[0]} + b  <-  plugging the coordinates of M2 into the slope-intercept form of the line of best fit.  
-b = {M2[1]} - {m}*{M2[0]} = {b}""")
+st.markdown(f"""$y = mx + b$    
+$y = {try_int(m)}x + b $   
+$ {try_int(M2[1])} = {try_int(m)}*{try_int(M2[0])} + b $  <-  plugging the coordinates of M2 into the slope-intercept form of the line of best fit.   
+$ b = {try_int(M2[1])} - {try_int(m)}*{try_int(M2[0])} = {try_int(b)} $""")
 
-st.markdown(f"\nAnd so, the Mayer line method produces the following line of best fit in slope-intercept form: y = {m}x + {b} ")
+st.markdown(f"And so, the Mayer line method produces the following line of best fit in slope-intercept form: ")
+st.markdown(f"$y = {try_int(m)}x + {try_int(b)}$"
 
 st.text("")
 st.markdown("""*Crafted by yarov3so*   
