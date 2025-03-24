@@ -42,7 +42,6 @@ i=0
 while True:
     
     entries[i]=st.text_input("Enter a pair of coordinates separated by a comma, or write 'done' if you are done: ",key=i)
-    st.markdown("""*The independent variable, usually labelled by 'x', goes on the left, whereas the dependent variable, usually labelled by 'y', goes on the right.*""")
 
     if len(entries[i])==0:
         st.stop()
@@ -68,6 +67,8 @@ if len(datapts)==1:
 
 datapts=datapts.sort_values(by="x")
 n=len(datapts)
+
+st.markdown("""*The independent variable, usually labelled by $x$, goes on the left, whereas the dependent variable, usually labelled by $y$, goes on the right.*""")
 
 st.markdown("You have entered the following coordinates:")
 st.dataframe(datapts,hide_index=True)
