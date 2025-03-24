@@ -36,6 +36,7 @@ current_entry={0}
 
 st.title("Mayer Line Calculator")
 st.markdown("Produces the equation of the line of best fit in slope-intercept form using the Mayer line method.")
+st.markdown("Note: This tool can be also used to find the equation of a line passing between two points.")
 st.markdown("""*The independent variable, usually labelled by $x$, goes on the left, whereas the dependent variable, usually labelled by $y$, goes on the right.*""")
 entries={}
 i=0
