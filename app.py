@@ -52,18 +52,18 @@ while True:
     try:
         datapts.loc[len(datapts)]=comprehend(entries[i])
     except:
-        st.markdown("Cannot parse your entry! Did you make a typo?")
+        st.warning("Cannot parse your entry! Did you make a typo?")
         st.stop()
     i+=1
 
 if len(datapts)==0 or (i==0 and "," not in entries[0]) or (i==0 and entries[0] == ",") :
-    st.markdown("You have entered no data points!")
+    st.warning("You have entered no data points!")
     st.stop()
 
 datapts=datapts.drop_duplicates()
 
 if len(datapts)==1:
-    st.markdown("You need at least two distinct points (ideally many more) to calculate the Mayer line equation!")
+    st.warning("You need at least two distinct points (ideally many more) to calculate the Mayer line equation!")
     st.stop()
 
 datapts=datapts.sort_values(by="x")
