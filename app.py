@@ -167,7 +167,7 @@ st.markdown(f"If we choose $M1$ :")
 st.markdown(f"""$$y = mx + b$$    
 $$y = {try_int(m)}(x) + b $$   
 $$ {try_int(M1[1])} = {try_int(m)} \\cdot ({try_int(M1[0])}) + b $$ &nbsp;  <-  plugging the coordinates of $M1$ into the slope-intercept form of the line of best fit.   
-$ b = {try_int(M1[1])} - {try_int(m)} \\cdot ({try_int(M1[0])}) = {try_int(b)} $""")
+$$ b = {try_int(M1[1])} - {try_int(m)} \\cdot ({try_int(M1[0])}) = {try_int(b)} $$""")
 
 st.markdown(f"If we choose $M2$ :")
 st.markdown(f"""$$y = mx + b$$    
