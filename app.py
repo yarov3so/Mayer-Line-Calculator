@@ -173,7 +173,7 @@ st.markdown(f"If we choose $M2$ :")
 st.markdown(f"""$$y = mx + b$$    
 $$y = {try_int(m)}(x) + b $$   
 $$ {try_int(M2[1])} = {try_int(m)} \cdot ({try_int(M2[0])}) + b $$ &nbsp; <-  plugging the coordinates of $M2$ into the slope-intercept form of the line of best fit.   
-$ b = {try_int(M2[1])} - ({try_int(m)}) \cdot ({try_int(M2[0])}) = {try_int(b)} $""")
+$$ b = {try_int(M2[1])} - ({try_int(m)}) \cdot ({try_int(M2[0])}) = {try_int(b)} $$""")
 
 st.markdown(f"And so, the Mayer line method produces the following line of best fit in slope-intercept form: ")
 
